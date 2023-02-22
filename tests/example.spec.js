@@ -1,8 +1,6 @@
 // @ts-check
 const { test, expect } = require("@playwright/test");
 
-// @ts-check
-const { test, expect } = require("@playwright/test");
 test("login", async ({ page }) => {
   await page.goto("http://farmholding-dev-fe.azurewebsites.net/");
   await page.getByRole("button", { name: "profile" }).click();
