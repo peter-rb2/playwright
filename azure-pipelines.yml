@@ -31,7 +31,7 @@ jobs:
       - publish: $(System.DefaultWorkingDirectory)/playwright-report
         artifact: playwright-report
         # always create the artifact, this is useful for debugging failed tests
-        condition: always()]
+        condition: always()
 
       - task: CmdLine@2
         inputs:
