@@ -15,5 +15,5 @@ jobs:
         inputs:
           script: |
             echo Hello, world!
-            cd $(System.DefaultWorkingDirectory)
+            echo $(System.DefaultWorkingDirectory)
             ls -l
