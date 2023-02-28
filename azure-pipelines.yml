@@ -19,3 +19,4 @@ jobs:
             ls -l
             echo Change dir
             cd tests
+            ls -l
