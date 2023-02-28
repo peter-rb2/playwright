@@ -14,8 +14,8 @@ jobs:
       - task: CmdLine@2
         inputs:
           script: |
-            echo Hello, world!
             echo $(System.DefaultWorkingDirectory)
+            pwd
             ls -l
             echo Change dir
             cd tests
