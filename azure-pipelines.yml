@@ -17,3 +17,5 @@ jobs:
             echo Hello, world!
             echo $(System.DefaultWorkingDirectory)
             ls -l
+            echo Change dir
+            cd tests
