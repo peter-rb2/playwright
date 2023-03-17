@@ -1,6 +1,8 @@
 name: Playwright Tests
 
-trigger: none
+trigger:
+  - main
+  - master
 
 pool:
   vmImage: "ubuntu-latest"
@@ -16,17 +18,14 @@ jobs:
       - script: |
           npm install
         displayName: "Install dependencies"
-        workingDirectory: playwright/
 
       - script: |
           npx playwright install --with-deps
         displayName: "Install Playwright Browsers"
-        workingDirectory: playwright/
 
       - script: |
           npm run test
         displayName: "Run Playwright tests"
-        workingDirectory: playwright/
 
       - task: PublishTestResults@2
         inputs:
