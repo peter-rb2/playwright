@@ -1,22 +1,35 @@
 name: Playwright Tests
 
-trigger:
-  - main
-  - master
+trigger: none
+
+pool:
+  vmImage: "ubuntu-latest"
 
 jobs:
   - job: test
-    timeoutInMinutes: 60
-    pool:
-      vmImage: "ubuntu-latest"
-
     steps:
-      - task: CmdLine@2
+      - task: NodeTool@0
         inputs:
-          script: |
-            echo $(System.DefaultWorkingDirectory)
-            pwd
-            ls -l
-            echo Change dir
-            cd tests
-            ls -l
+          versionSpec: "16.x"
+        displayName: "Install Node.js"
+
+      - script: |
+          npm install
+        displayName: "Install dependencies"
+        workingDirectory: playwright/
+
+      - script: |
+          npx playwright install --with-deps
+        displayName: "Install Playwright Browsers"
+        workingDirectory: playwright/
+
+      - script: |
+          npm run test
+        displayName: "Run Playwright tests"
+        workingDirectory: playwright/
+
+      - task: PublishTestResults@2
+        inputs:
+          testResultsFormat: "JUnit"
+          testResultsFiles: "**/results.xml"
+        condition: always()
