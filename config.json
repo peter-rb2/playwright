@@ -1,0 +1,10 @@
+{
+  "DEV": {
+    "WEBSITE_URL": "http://farmholding-dev-fe.azurewebsites.net/",
+    "DYNAMIC_URL": "https://farm-ontw.crm4.dynamics.com/main.aspx",
+    "USER_NAME": "peter@rb2.nl",
+    "USER_PASSWORD": "12345678",
+    "DY_EMAIL": "Dynamics-api@allgifts.nl",
+    "DY_PASSWORD": "UZQROMh#H7z{y@bypWG=2>3x2"
+  }
+}
