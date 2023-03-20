@@ -7,6 +7,10 @@ trigger:
 pool:
   vmImage: "ubuntu-latest"
 
+variables:
+  - name: peter
+    age: 30
+
 jobs:
   - job: test
     steps:
@@ -14,6 +18,10 @@ jobs:
         inputs:
           versionSpec: "16.x"
         displayName: "Install Node.js"
+
+      - script: |
+          printenv
+        displayName: "list Env"
 
       - script: |
           npm install
