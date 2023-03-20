@@ -8,8 +8,12 @@ pool:
   vmImage: "ubuntu-latest"
 
 variables:
-  - name: one
-    value: initialValue
+  - name: dev.website.url
+    value: http://farmholding-dev-fe.azurewebsites.net/
+  - name: dev.website.username
+    value: peter@rb2.nl
+  - name: dev.website.password
+    value: 12345678
 
 jobs:
   - job: test
