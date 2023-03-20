@@ -13,7 +13,7 @@ variables:
   - name: dev.website.username
     value: peter@rb2.nl
   - name: dev.website.password
-    value: 12345678
+    value: "12345678"
 
 jobs:
   - job: test

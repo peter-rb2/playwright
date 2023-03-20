@@ -4,12 +4,12 @@ const { setTimeout } = require("timers/promises");
 const axios = require("axios");
 test.beforeEach(async ({ page }) => {
   test.slow();
-  await page.goto(DEV.WEBSITE_URL);
+  await page.goto(process.env.DEV_WEBSITE_URL);
   await page.getByRole("button", { name: "profile" }).click();
-  await page.locator("#login-email").click(DEV.USER_NAME);
-  await page.locator("#login-email").fill(DEV.USER_NAME);
-  await page.locator("#login-password").click(DEV.USER_PASSWORD);
-  await page.locator("#login-password").fill(DEV.USER_PASSWORD);
+  await page.locator("#login-email").click();
+  await page.locator("#login-email").fill(process.env.DEV_WEBSITE_USERNAME);
+  await page.locator("#login-password").click();
+  await page.locator("#login-password").fill(process.env.DEV_WEBSITE_PASSWORD);
   await page.getByRole("button", { name: "Inloggen", exact: true }).click();
 });
 
