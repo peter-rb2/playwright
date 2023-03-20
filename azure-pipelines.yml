@@ -8,8 +8,8 @@ pool:
   vmImage: "ubuntu-latest"
 
 variables:
-  - name: peter
-    age: 30
+  - name: one
+    value: initialValue
 
 jobs:
   - job: test
